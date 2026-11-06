@@ -2,48 +2,59 @@
 
 # GymMane PC
 
-**A PC-friendly workout journal inspired by GymMane**
+### Your workout journal, reimagined for desktop.
 
-[🌐 Open Website](https://lokilancer.github.io/GymMane-PC/) · [📦 Source Code](https://github.com/lokilancer/GymMane-PC) · [⬆️ Original Project](https://github.com/InlitX/GymMane)
+A PC-focused web and Windows desktop adaptation inspired by GymMane.
 
-![Status](https://img.shields.io/badge/status-prototype-blue)
-![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Windows-2ea44f)
+<p>
+  <a href="https://lokilancer.github.io/GymMane-PC/"><strong>Launch App</strong></a> ·
+  <a href="https://github.com/lokilancer/GymMane-PC"><strong>Source Code</strong></a> ·
+  <a href="https://github.com/InlitX/GymMane"><strong>Original Project</strong></a>
+</p>
+
+[![GitHub stars](https://img.shields.io/github/stars/lokilancer/GymMane-PC?style=for-the-badge&logo=github&label=Star%20this%20project)](https://github.com/lokilancer/GymMane-PC/stargazers)
+![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Windows-2563eb?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Prototype-f59e0b?style=for-the-badge)
 
 </div>
 
 ---
 
-## About
+## Overview
 
-GymMane PC is a web and Windows desktop starter adaptation of **GymMane by InlitX**. It is designed to make workout logging available on a computer, with local data storage and offline web-app support.
+**GymMane PC** brings essential workout-tracking tools to a desktop-friendly experience. It is an initial functional prototype based on **GymMane by InlitX**, with local data storage and offline web-app support.
 
-> **Attribution:** Based on GymMane by InlitX.
+> **Credit:** Based on GymMane by InlitX. Please retain the original project's attribution and review the included licensing terms before redistribution.
 
 ## Features
 
-- Log workouts, sets, reps and optional load
-- Browse the exercise library and add custom exercises
-- Create and reuse workout routines
-- Review session history and weekly activity
-- Optional rest timer
-- Store data locally and export/import JSON backups
-- Offline-capable web app
-- Electron configuration for Windows installer and portable app builds
+| Feature | Description |
+|---|---|
+| Workout logging | Record exercises, sets, reps and optional load |
+| Exercise library | Browse existing exercises and add custom entries |
+| Routines | Create and reuse workout routines |
+| Progress history | Review previous sessions and weekly activity |
+| Rest timer | Optional timer between sets |
+| Data ownership | Local browser storage with JSON backup and restore |
+| Offline support | Installable, offline-capable web app |
+| Desktop packaging | Electron configuration for Windows builds |
 
-## Try it
+## Get started
 
-Visit the **[GymMane PC website](https://lokilancer.github.io/GymMane-PC/)**. Your workout information is stored in your browser on your device; use the backup feature before clearing browser data or moving devices.
+**[Open GymMane PC](https://lokilancer.github.io/GymMane-PC/)**
 
-## Run locally
+Your workout records are stored locally in your browser on your device. Export a backup before clearing browser data or changing devices.
 
-Requires Node.js 20 or newer.
+## Run from source
+
+**Requirements:** Node.js 20 or newer.
 
 ```bash
 npm install
 npm start
 ```
 
-To build the Windows desktop package on Windows:
+Build the Windows desktop package on Windows:
 
 ```bash
 npm run dist:win
@@ -51,16 +62,20 @@ npm run dist:win
 
 ## Deployment
 
-The web version is published with GitHub Pages using the workflow in `.github/workflows/pages.yml`.
+The web application is deployed through GitHub Pages using the workflow in `.github/workflows/pages.yml`.
 
-## Project links
+## Project information
 
-| Project | Link |
-|---|---|
-| Live website | https://lokilancer.github.io/GymMane-PC/ |
-| GitHub repository | https://github.com/lokilancer/GymMane-PC |
-| Original GymMane | https://github.com/InlitX/GymMane |
+- **Live application:** [lokilancer.github.io/GymMane-PC](https://lokilancer.github.io/GymMane-PC/)
+- **Repository:** [lokilancer/GymMane-PC](https://github.com/lokilancer/GymMane-PC)
+- **Original project:** [InlitX/GymMane](https://github.com/InlitX/GymMane)
 
-## License and credits
+## Support the project
 
-This project is an initial functional prototype, not a feature-complete port of the Android app. Please read the repository's license and additional attribution notes before redistributing. The original project is credited to **InlitX**.
+If this project is useful or interesting, please consider giving the repository a ⭐ on GitHub. Your star helps others discover the project.
+
+[![Star on GitHub](https://img.shields.io/badge/⭐%20Star%20this%20repository-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/lokilancer/GymMane-PC/stargazers)
+
+## Credits & licensing
+
+This repository contains an early-stage prototype and is not a feature-complete port of the original Android application. Review `LICENSE` and `ADDITIONAL_TERMS.md` before redistribution. Original project credit: **InlitX**.
