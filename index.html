@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11110f">
+  <title>GymMane PC — Lift. Log it. Grow.</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">G</div><div><b>GymMane</b><small>PC EDITION</small></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <button class="nav active" data-page="overview"><span>◫</span> Overview</button>
+    <button class="nav" data-page="workout"><span>✳</span> Workout</button>
+    <button class="nav" data-page="routines"><span>▤</span> Routines</button>
+    <button class="nav" data-page="exercises"><span>⌕</span> Exercise library</button>
+    <button class="nav" data-page="history"><span>◷</span> History</button>
+    <div class="sidebar-bottom">
+      <div class="offline"><i></i><span>Offline mode enabled</span></div>
+      <button class="nav" data-page="settings"><span>⚙</span> Settings</button>
+      <div class="profile"><div class="avatar">Y</div><div><b>Your space</b><small>Stored on this device</small></div></div>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="crumb">WORKSPACE <span>/</span> <b id="crumb">Overview</b></div><div class="top-actions"><span class="date" id="today"></span><button class="icon-btn" id="exportBtn" title="Export backup">⇩</button></div></header>
+    <section class="page active" id="page-overview">
+      <div class="welcome"><div><div class="eyebrow">YOUR TRAINING SPACE</div><h1>Build consistency.<br><em>One session at a time.</em></h1><p>A simple place to plan, log and reflect on your training.</p></div><div class="hero-art"><div class="ring r1"></div><div class="ring r2"></div><div class="hero-symbol">✳</div></div></div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-label">SESSIONS LOGGED</span><strong id="statSessions">0</strong><small>All-time sessions</small></article>
+        <article class="stat-card"><span class="stat-label">THIS WEEK</span><strong id="statWeek">0</strong><small>Training sessions</small></article>
+        <article class="stat-card"><span class="stat-label">TOTAL SETS</span><strong id="statSets">0</strong><small>Completed sets</small></article>
+        <article class="stat-card accent-card"><span class="stat-label">CURRENT STREAK</span><strong id="statStreak">0 <small>days</small></strong><small>Keep a comfortable rhythm</small></article>
+      </div>
+      <div class="section-head"><div><div class="eyebrow">GET STARTED</div><h2>Today's plan</h2></div><button class="text-btn" data-goto="routines">View routines ↗</button></div>
+      <div class="content-grid">
+        <article class="panel featured-workout"><div class="panel-top"><span class="pill">READY WHEN YOU ARE</span><span class="muted">~ 30–40 MIN</span></div><h3>Start a session</h3><p>Choose a few exercises, record your sets and take breaks when you need them.</p><button class="primary-btn" data-goto="workout">＋ Start workout</button></article>
+        <article class="panel"><div class="panel-top"><b>RECENT ACTIVITY</b><button class="text-btn" data-goto="history">See all</button></div><div id="recentList" class="recent-list"><div class="empty">Your completed sessions will appear here.</div></div></article>
+      </div>
+      <div class="section-head"><div><div class="eyebrow">A QUICK LOOK</div><h2>Training rhythm</h2></div></div>
+      <article class="panel chart-panel"><div class="chart-title"><b>Sessions over the last 7 days</b><span class="muted">Based on your log</span></div><div id="weekChart" class="bar-chart"></div></article>
+    </section>
+    <section class="page" id="page-workout">
+      <div class="page-heading"><div class="eyebrow">TRAINING SESSION</div><h1>Log a workout</h1><p>Record what you did at a pace that feels right for you.</p></div>
+      <div class="workout-layout">
+        <article class="panel">
+          <label class="field-label" for="workoutName">SESSION NAME</label><input id="workoutName" class="field" value="My workout">
+          <div class="section-head compact"><h2>Exercises</h2><button class="text-btn" id="addExercise">＋ Add exercise</button></div>
+          <div id="workoutExercises"><div class="empty">Add exercises to begin your session.</div></div>
+          <div class="workout-footer"><button class="secondary-btn" id="clearWorkout">Clear</button><button class="primary-btn" id="finishWorkout">Finish session ✓</button></div>
+        </article>
+        <aside class="panel timer-panel"><div class="eyebrow">REST TIMER</div><div class="timer" id="timer">01:30</div><div class="timer-controls"><button class="secondary-btn" id="timerMinus">− 15s</button><button class="primary-btn" id="timerToggle">Start</button><button class="secondary-btn" id="timerPlus">＋ 15s</button></div><p class="muted">Use breaks that suit your session. The timer is optional.</p></aside>
+      </div>
+    </section>
+    <section class="page" id="page-routines">
+      <div class="page-heading"><div class="eyebrow">PLAN AHEAD</div><h1>Your routines</h1><p>Save a repeatable session structure. Adjust it whenever you like.</p></div>
+      <div class="section-head"><h2>Saved routines</h2><button class="primary-btn" id="newRoutine">＋ New routine</button></div>
+      <div id="routineList" class="cards-grid"></div>
+    </section>
+    <section class="page" id="page-exercises">
+      <div class="page-heading"><div class="eyebrow">MOVEMENT LIBRARY</div><h1>Exercise library</h1><p>Browse a starter collection or add movements that work for your setup.</p></div>
+      <div class="library-tools"><input class="field" id="exerciseSearch" placeholder="Search exercises…"><select class="field" id="muscleFilter"><option value="">All groups</option><option>Upper body</option><option>Lower body</option><option>Core</option><option>Full body</option></select></div>
+      <div id="exerciseList" class="exercise-list"></div>
+    </section>
+    <section class="page" id="page-history">
+      <div class="page-heading"><div class="eyebrow">YOUR JOURNEY</div><h1>Session history</h1><p>Your activity log, saved locally on this device.</p></div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+    <section class="page" id="page-settings">
+      <div class="page-heading"><div class="eyebrow">PREFERENCES</div><h1>Settings</h1><p>Manage your local data and app preferences.</p></div>
+      <article class="panel settings-panel"><h3>Data & privacy</h3><p>Your entries stay in this browser or desktop app. No account or remote server is required.</p><div class="setting-row"><div><b>Export a backup</b><small>Download your routines and session history as JSON.</small></div><button class="secondary-btn" id="settingsExport">Export</button></div><div class="setting-row"><div><b>Import a backup</b><small>Restore a previously exported GymMane PC JSON file.</small></div><label class="secondary-btn file-label">Choose file<input type="file" id="importFile" accept=".json,application/json" hidden></label></div><div class="setting-row danger"><div><b>Clear local data</b><small>This removes sessions and routines from this device.</small></div><button class="danger-btn" id="clearData">Clear data</button></div></article>
+      <article class="panel legal-panel"><h3>Credits & licensing</h3><p>Based on GymMane by InlitX. This independent PC adaptation retains the upstream attribution requirement. See the included licensing notices.</p><a href="https://github.com/InlitX/GymMane" target="_blank" rel="noreferrer">Original GymMane project ↗</a></article>
+    </section>
+    <footer>GYMMANE PC · BUILT FOR YOUR DESKTOP <span>Based on GymMane by InlitX</span></footer>
+  </main>
+</div>
+<div class="modal-backdrop" id="modal"><div class="modal"><button class="modal-close" id="modalClose">×</button><div id="modalBody"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
