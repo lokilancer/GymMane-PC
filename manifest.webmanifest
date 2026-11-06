@@ -1,0 +1,9 @@
+{
+  "name": "GymMane PC",
+  "short_name": "GymMane",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#11110f",
+  "theme_color": "#11110f",
+  "icons": []
+}
