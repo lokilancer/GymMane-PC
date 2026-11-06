@@ -15,7 +15,15 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run dist:win
-      - uses: softprops/action-gh-release@v2
+      - name: Upload EXE files for manual runs
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: GymMane-PC-Windows
+          path: dist/*.exe
+      - name: Publish EXE files for version tags
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             dist/*.exe
