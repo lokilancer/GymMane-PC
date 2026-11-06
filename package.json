@@ -1,0 +1,23 @@
+{
+  "name": "gymmane-pc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline-first GymMane PC web and Windows desktop adaptation",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "build:web": "echo Static web app ready in project root",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "org.gymmane.pc",
+    "productName": "GymMane PC",
+    "files": ["index.html", "styles.css", "app.js", "manifest.webmanifest", "sw.js", "main.cjs"],
+    "win": {"target": ["nsis", "portable"]},
+    "nsis": {"oneClick": false, "allowToChangeInstallationDirectory": true}
+  }
+}
