@@ -1,24 +1,66 @@
+<div align="center">
+
 # GymMane PC
 
-PC-focused web and Windows desktop starter adaptation of GymMane.
+**A PC-friendly workout journal inspired by GymMane**
 
-**Attribution:** Based on GymMane by InlitX.
+[🌐 Open Website](https://lokilancer.github.io/GymMane-PC/) · [📦 Source Code](https://github.com/lokilancer/GymMane-PC) · [⬆️ Original Project](https://github.com/InlitX/GymMane)
 
-The full source bundle is available in the repository's Releases or as `GymMane-PC-prototype.zip` once uploaded. This is an initial functional prototype, not a feature-complete port of the Android app.
+![Status](https://img.shields.io/badge/status-prototype-blue)
+![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Windows-2ea44f)
+
+</div>
+
+---
+
+## About
+
+GymMane PC is a web and Windows desktop starter adaptation of **GymMane by InlitX**. It is designed to make workout logging available on a computer, with local data storage and offline web-app support.
+
+> **Attribution:** Based on GymMane by InlitX.
 
 ## Features
-- Workout logging with sets, reps and optional load
-- Exercise library, custom exercises and reusable routines
-- Session history and weekly activity overview
+
+- Log workouts, sets, reps and optional load
+- Browse the exercise library and add custom exercises
+- Create and reuse workout routines
+- Review session history and weekly activity
 - Optional rest timer
-- Local storage and JSON backup/restore
-- Offline web app support
-- Electron configuration for Windows installer and portable EXE
+- Store data locally and export/import JSON backups
+- Offline-capable web app
+- Electron configuration for Windows installer and portable app builds
 
-## Build
-Requires Node.js 20+. Run `npm install`, then `npm start` for desktop preview or `npm run dist:win` on Windows to package the app.
+## Try it
 
-## GitHub Pages
-Repository Settings → Pages → GitHub Actions. The included `pages.yml` workflow deploys the web app from `main`.
+Visit the **[GymMane PC website](https://lokilancer.github.io/GymMane-PC/)**. Your workout information is stored in your browser on your device; use the backup feature before clearing browser data or moving devices.
 
-Original project: https://github.com/InlitX/GymMane
+## Run locally
+
+Requires Node.js 20 or newer.
+
+```bash
+npm install
+npm start
+```
+
+To build the Windows desktop package on Windows:
+
+```bash
+npm run dist:win
+```
+
+## Deployment
+
+The web version is published with GitHub Pages using the workflow in `.github/workflows/pages.yml`.
+
+## Project links
+
+| Project | Link |
+|---|---|
+| Live website | https://lokilancer.github.io/GymMane-PC/ |
+| GitHub repository | https://github.com/lokilancer/GymMane-PC |
+| Original GymMane | https://github.com/InlitX/GymMane |
+
+## License and credits
+
+This project is an initial functional prototype, not a feature-complete port of the Android app. Please read the repository's license and additional attribution notes before redistributing. The original project is credited to **InlitX**.
